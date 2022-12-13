@@ -2,6 +2,7 @@ import './App.css';
 import Header from "./components/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import ProductListing from './components/ProductListing';
+import "react-loading-skeleton/dist/skeleton.css";
 import ProductDetails from './components/ProductDetails';
 
 function App() {
