@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Skeleton from 'react-loading-skeleton';
+import { Rating } from 'semantic-ui-react';
 
 const ProductComponent = () => {
     const products = useSelector((state) => state.allProducts.products);
@@ -9,6 +10,7 @@ const ProductComponent = () => {
 
     useEffect(() => {
         setFilteredProducts(products);
+        // document.querySelector(".rating").rating();
     }, [products])
 
     const filter = (category) => {
@@ -81,7 +83,7 @@ const ProductComponent = () => {
                             <div className='four column wide' key={product.id}>
                                 <Link to={`/product/${product.id}`}>
                                     <div className='ui link cards'>
-                                        <div className='card' style={{height: "400px"}}>
+                                        <div className='card' style={{height: "440px"}}>
                                             
                                             <div className='image'>
                                                 <img src={product.image} alt={product.title} style={{height: "250px"}}/>
@@ -92,6 +94,10 @@ const ProductComponent = () => {
                                                 </div>
                                                 <div className='meta price' style={{margin: "10px 0px 10px 0px"}}>${product.price}</div>
                                                 <div className='meta' style={{margin: "10px 0px 10px 0px"}}>{product.category}</div>
+                                                <div className='ui star rating' data-rating="3" data-max-rating="5"></div>
+
+                                                <Rating icon="star" defaultRating={product.rating.rate} size="small" maxRating={5} disabled/>
+                                                
                                             </div>
                                         </div>
                                     </div>
