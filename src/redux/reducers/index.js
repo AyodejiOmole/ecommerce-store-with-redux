@@ -6,7 +6,7 @@ const reducers = combineReducers(
     {
         allProducts: productReducer,
         product: selectedProductReducer,
-        cart: cartReducer
+        cart: cartReducer,
     }
 );
 

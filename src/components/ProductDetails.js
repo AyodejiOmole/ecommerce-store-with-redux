@@ -34,7 +34,7 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className='ui grid container'>
+    <div className='ui grid container' style={{marginTop: "70px"}}>
       {Object.keys(product).length === 0 ? (
         <div>Loading...</div>
       ) : (
@@ -52,11 +52,15 @@ const ProductDetails = () => {
                 </h2>
                 <h3 className="ui brown block header">{product.category}</h3>
                 <p>{product.description}</p>
-                <div className="ui vertical animated button" tabIndex="0">
+                {/* <div className="ui vertical animated button" tabIndex="0">
                   <div className="hidden content">
                     <i className="shop icon"></i>
                   </div>
                   <div className="visible content" onClick={add}>Add to Cart</div>
+                </div> */}
+                <div className="ui basic button" onClick={add}>
+                  <i className='shop icon'></i>
+                  Add to Cart
                 </div>
               </div>
             </div>
