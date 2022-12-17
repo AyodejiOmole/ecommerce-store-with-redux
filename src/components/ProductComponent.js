@@ -10,7 +10,6 @@ const ProductComponent = () => {
 
     useEffect(() => {
         setFilteredProducts(products);
-        // document.querySelector(".rating").rating();
     }, [products])
 
     const filter = (category) => {
@@ -45,7 +44,7 @@ const ProductComponent = () => {
 
     return (
         <>
-            <div className='ui five column wide container grid center-align'>
+            <div className='ui five column wide container center aligned grid stackable'>
                 <div className='column'>
                     <button className='ui black button' onClick={() => filter("All")}>
                         All
@@ -80,7 +79,7 @@ const ProductComponent = () => {
                 (
                     filteredProducts.map((product) => {
                         return (
-                            <div className='four column wide' key={product.id}>
+                            <div className='four column centered' key={product.id} id="product">
                                 <Link to={`/product/${product.id}`}>
                                     <div className='ui link cards'>
                                         <div className='card' style={{height: "440px"}}>
@@ -97,7 +96,6 @@ const ProductComponent = () => {
                                                 <div className='ui star rating' data-rating="3" data-max-rating="5"></div>
 
                                                 <Rating icon="star" defaultRating={product.rating.rate} size="small" maxRating={5} disabled/>
-                                                
                                             </div>
                                         </div>
                                     </div>
